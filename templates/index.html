@@ -1,0 +1,31 @@
+<html>
+    <head>
+      <title>Registration</title>
+    </head>
+    <body>
+        <h1>Sign In</h1>
+        <form action="/result" method="post">
+            <input type="hidden" name="action" value="signIn">
+            <label for="email">Email:<input type="text" name="email" id="email"></label>
+            <label for="password">Password:<input type="password" name="password" id="password"></label>
+            <input type="submit" name="go" value="Submit"> 
+        </form>
+        <h2>Registration Form</h2>
+        <form action='/success' method='POST'>
+            <input type="hidden" name="register" value="regi">
+            <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+            <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+            <label for="email">Email:<input type="text" name="email" id="email"></label>
+            <label for="password">password:<input type="text" name="password" id="password"></label>
+            <label for="confirm_password">Confirm Password:<input type="text" name="confirm_password" id="confirm_password"></label>
+            <input type="submit" value="Submit">
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {%for i in messages:%}
+                <p style="color: red">{{i}}</p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+    </body>
+    </html>
